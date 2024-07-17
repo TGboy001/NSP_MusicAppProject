@@ -4,20 +4,23 @@
 import Axios from 'axios'
 
 let axios = Axios.create({
-    timeout: 1800000 // 超时设置 
+  timeout: 1800000 // 超时设置
 })
 
 // 设置axios参数
 // 请求拦截器
-axios.interceptors.request.use((config) => {
+axios.interceptors.request.use(
+  (config) => {
     return config
-}, (error) => {
+  },
+  (error) => {
     return error
-})
+  }
+)
 
 // 响应拦截器
 axios.interceptors.response.use((response) => {
-    return response.data
+  return response.data
 })
 
 export default axios
